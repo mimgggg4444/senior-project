@@ -29,3 +29,10 @@ androidmanifest.xml
 android:name=""
 android:value=""
 ```
+
+get firebase_api.dart
+const ios, const android, const settings
+add
+
+await _localNotifications.initialize
+
