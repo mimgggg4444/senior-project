@@ -25,7 +25,7 @@ flutter pub add flutter local notifications
 androidmanifest.xml
 
 ```xml
--> 
 <meta-data
-android:name="
+android:name=""
+android:value=""
 ```
