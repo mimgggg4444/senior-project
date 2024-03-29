@@ -43,7 +43,22 @@ initPushNotification, initLocalNotifications
 =>token을 활용한 firebase에서 notification 주는 방법
 해결해야하는 문제. a, b 핸드폰 연결 -> a 핸드폰에서 버튼을 눌렀을때 b핸드폰에 notification
 
+
+
 방법과 키워드
+
+-> 구조에 대한 설명 요청
+
+방법 - 
+a b 핸드폰 존재,
+
+a b핸드폰 firebase 등록, -> 등록 방법 firebase의 token에 대해서 어떻게 발급되는가?
+핸드폰을 설치하면 알아서 저장이 되는가?
+
+
+firebase clould messaging 서비스 메시지 보내도록 요청, 
+b핸드폰의 토큰을 목적지로 저장(b핸드폰에만 알림이 가도록 설정), 
+b핸드폰 메시지 받고 사용자에게 알림표시
 
 ## 2. 
 
