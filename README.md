@@ -18,3 +18,14 @@ b핸드폰에 a버튼이 핸드폰 눌렀다고 알림.
 
 firebase - engage - cloud messaging - send your first message - test on device(token) - 
 
+pushnotification - cloud messaging - compose notification
+
+flutter pub add flutter local notifications
+
+androidmanifest.xml
+
+```xml
+-> 
+<meta-data
+android:name="
+```
