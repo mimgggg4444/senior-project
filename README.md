@@ -3,7 +3,7 @@
 
 
 
-1. notification - firebase via
+## 1. notification - firebase via
 
 
 a핸드폰, b핸드폰은 4자리 코드로 네트워크 연결이 되어있음. 
@@ -36,3 +36,10 @@ add
 
 await _localNotifications.initialize
 
+flutter app 권한추가
+
+initPushNotification, initLocalNotifications
+
+
+
+## 2. 
