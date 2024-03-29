@@ -77,4 +77,8 @@ pushnotification - cloud messaging - compose notification
 위의 웹을 통해서 cloud messaging을 했다면, 이번에는 a핸드폰 버튼을 눌렀을때 b핸드폰으로 알림을 보내는 방법 요청
 
 
+### 방법.
+1. 
+
+
 ## 3.
