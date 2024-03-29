@@ -52,17 +52,29 @@ initPushNotification, initLocalNotifications
 방법 - 
 a b 핸드폰 존재,
 
-a b핸드폰 firebase 등록, -> 등록 방법 firebase의 token에 대해서 어떻게 발급되는가?
-핸드폰을 설치하면 알아서 저장이 되는가?
-
+a b핸드폰 firebase 등록, -> 등록 방법 firebase의 token 자동 발급
 
 firebase clould messaging 서비스 메시지 보내도록 요청, 
 b핸드폰의 토큰을 목적지로 저장(b핸드폰에만 알림이 가도록 설정), 
 b핸드폰 메시지 받고 사용자에게 알림표시
 
+
+어플리케이션마다 토큰이 달라지는가?
+final fCMToken = await _firebaseMessaging.getToken(); 
+을 활용해서 토큰이 생성되는지 확인 요청
+-> 각각의 핸드폰(또는 앱 인스턴스)마다 고유한 FCM(Firebase Cloud Messaging) 토큰이 생성됨.
+
+생성된 코드를 4자리 고유한 번호로 바꾸고 이 번호를 통해서 a b 핸드폰을 연결하는 방법
+b핸드폰의 토큰을 목적지로 저장(b핸드폰에만 알림이 가도록 설정), 
+
 ## 2. 
+a핸드폰에서 b핸드폰으로 알림 보낼 수 있는 방법 요청
+생성된 2개의 토큰을 갖고, 
+
+firebase - engage - cloud messaging - send your first message - test on device(token) - 
+
+pushnotification - cloud messaging - compose notification
+위의 웹을 통해서 cloud messaging을 했다면, 이번에는 a핸드폰 버튼을 눌렀을때 b핸드폰으로 알림을 보내는 방법 요청
 
 
-
-
-
+## 3.
