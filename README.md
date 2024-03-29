@@ -3,7 +3,7 @@
 
 
 
-## 1. notification - firebase via
+## 1. notification - via firebase
 
 
 a핸드폰, b핸드폰은 4자리 코드로 네트워크 연결이 되어있음. 
