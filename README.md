@@ -40,6 +40,9 @@ flutter app 권한추가
 
 initPushNotification, initLocalNotifications
 
+=>token을 활용한 firebase에서 notification 주는 방법
+해결해야하는 문제. a, b 핸드폰 연결 -> a 핸드폰에서 버튼을 눌렀을때 b핸드폰에 notification
 
+방법과 키워드
 
 ## 2. 
