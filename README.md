@@ -16,3 +16,5 @@ b핸드폰에 a버튼이 핸드폰 눌렀다고 알림.
 [Flutter Push Notifications using Firebase](https://www.youtube.com/watch?v=k0zGEbiDJcQ&ab_channel=HeyFlutter%E2%80%A4com)
 -> only android firebase config
 
+firebase - engage - cloud messaging - send your first message - test on device(token) - 
+
