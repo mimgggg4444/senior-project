@@ -1,7 +1,7 @@
 # jp0329
 
 
-
+[web view](https://www.youtube.com/watch?v=j5JamZ-uBYY&ab_channel=DearProgrammer)
 
 ## 1. notification - via firebase
 
