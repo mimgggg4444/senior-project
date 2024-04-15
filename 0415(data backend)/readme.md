@@ -32,7 +32,7 @@ Firebase Firestore
 문서에는 위에서 언급한 필드들을 포함
 
 ### 예
-```
+``` json
 {
   userId: "user123",
   name: "홍길동",
@@ -48,4 +48,30 @@ Firebase Firestore
     bmi: 22.5
   }
 }
+```
+
+### 데이터 형식
+``` dart
+Future<void> saveHealthRecord(
+  String userId,
+  int bloodSugar,
+  Map<String, int> bloodPressure,
+  double weight,
+  double bmi,
+) async {
+  // ...
+  await _firestore.collection('healthRecords').add({
+    'userId': userId, // String
+    'recordDate': Timestamp.now(), // Firestore Timestamp
+    'bloodSugar': bloodSugar, // int
+    'bloodPressure': {
+      'systolic': bloodPressure['systolic']!, // int
+      'diastolic': bloodPressure['diastolic']!, // int
+    },
+    'weight': weight, // double
+    'bmi': bmi, // double
+  });
+  // ...
+}
+
 ```
