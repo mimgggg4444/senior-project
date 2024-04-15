@@ -32,7 +32,8 @@ Firebase Firestore
 문서에는 위에서 언급한 필드들을 포함
 
 ### 예
-``` json
+
+``` xml
 {
   userId: "user123",
   name: "홍길동",
