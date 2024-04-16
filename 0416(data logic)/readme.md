@@ -1,7 +1,6 @@
-
-
 ### 혈당 수치에 따른 결과값
-``` text
+
+```text
 공복 혈당 수치 (공복 혈당): 일반적으로 3.9 ~ 5.5 mmol/L
 식후 2시간 혈당 수치 (식후 혈당): 7.8 mmol/L 이하로 유지하는 것이 이상적
 당화혈색소 (HbA1c): 당화혈색소는 최근 2~3개월 동안의 평균 혈당 수치를 반영
@@ -10,9 +9,9 @@
 6.5% 이상은 당뇨병을 나타냅니다.
 ```
 
-
 ### 혈당 수치에 따른 결과값 code example
-``` dart
+
+```dart
 class BloodSugarChecker extends StatefulWidget {
   @override
   _BloodSugarCheckerState createState() => _BloodSugarCheckerState();
@@ -22,7 +21,7 @@ class _BloodSugarCheckerState extends State<BloodSugarChecker> {
   final TextEditingController _fastingController = TextEditingController();
   final TextEditingController _postMealController = TextEditingController();
   final TextEditingController _hba1cController = TextEditingController();
-  
+
   String _result = '';
 
   void _calculate() {
@@ -53,31 +52,44 @@ class _BloodSugarCheckerState extends State<BloodSugarChecker> {
 
 ```
 
-### 
-```
+###
+
 ```
 
-### 
-```
 ```
 
-### 
-```
+###
+
 ```
 
-### 
-```
 ```
 
-### 
-```
+###
+
 ```
 
-### 
-```
 ```
 
-### 
-```
+###
+
 ```
 
+```
+
+###
+
+```
+
+```
+
+###
+
+```
+
+```
+
+###
+
+```
+
+```
