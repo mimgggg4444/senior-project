@@ -1,0 +1,8 @@
+dependencies:
+  flutter:
+    sdk: flutter
+  firebase_core: ^2.30.0
+  firebase_auth: ^4.19.2
+  kakao_flutter_sdk: ^1.9.1+2
+  provider: ^6.1.2
+  shared_preferences: ^2.2.3
