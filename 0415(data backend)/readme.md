@@ -61,26 +61,80 @@ Firebase Firestore
 
 ### 데이터 형식
 ``` dart
-Future<void> saveHealthRecord(
-  String userId,
-  int bloodSugar,
-  Map<String, int> bloodPressure,
-  double weight,
-  double bmi,
-) async {
-  // ...
-  await _firestore.collection('healthRecords').add({
-    'userId': userId, // String
-    'recordDate': Timestamp.now(), // Firestore Timestamp
-    'bloodSugar': bloodSugar, // int
-    'bloodPressure': {
-      'systolic': bloodPressure['systolic']!, // int
-      'diastolic': bloodPressure['diastolic']!, // int
-    },
-    'weight': weight, // double
-    'bmi': bmi, // double
+class UserModel {
+  final String kakaoUserId;
+  final String selectedUserListString;
+  final String name;
+  final String birthDate;
+  final int weight;
+  final int tall;
+  final HealthStatus healthStatus;
+
+  UserModel({
+    required this.kakaoUserId,
+    required this.selectedUserListString,
+    required this.name,
+    required this.birthDate,
+    required this.weight,
+    required this.tall,
+    required this.healthStatus,
   });
-  // ...
+
+  // JSON에서 UserModel 인스턴스 생성
+  factory UserModel.fromJson(Map<String, dynamic> json) {
+    return UserModel(
+      kakaoUserId: json['kakaoUserId'],
+      selectedUserListString: json['SelectedUserListString'],
+      name: json['name'],
+      birthDate: json['birthDate'],
+      weight: json['weight'],
+      tall: json['tall'],
+      healthStatus: HealthStatus.fromJson(json['healthStatus']),
+    );
+  }
+
+  // UserModel 인스턴스에서 JSON 생성
+  Map<String, dynamic> toJson() => {
+        'kakaoUserId': kakaoUserId,
+        'SelectedUserListString': selectedUserListString,
+        'name': name,
+        'birthDate': birthDate,
+        'weight': weight,
+        'tall': tall,
+        'healthStatus': healthStatus.toJson(),
+      };
+}
+
+class HealthStatus {
+  final int bloodSugar;
+  final int systolic;
+  final int diastolic;
+  final String dateTime;
+
+  HealthStatus({
+    required this.bloodSugar,
+    required this.systolic,
+    required this.diastolic,
+    required this.dateTime,
+  });
+
+  // JSON에서 HealthStatus 인스턴스 생성
+  factory HealthStatus.fromJson(Map<String, dynamic> json) {
+    return HealthStatus(
+      bloodSugar: json['bloodSugar'],
+      systolic: json['systolic'],
+      diastolic: json['diastolic'],
+      dateTime: json['dateTime'],
+    );
+  }
+
+  // HealthStatus 인스턴스에서 JSON 생성
+  Map<String, dynamic> toJson() => {
+        'bloodSugar': bloodSugar,
+        'systolic': systolic,
+        'diastolic': diastolic,
+        'dateTime': dateTime,
+      };
 }
 
 ```
