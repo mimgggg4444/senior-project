@@ -35,21 +35,29 @@ Firebase Firestore
 
 ``` xml
 {
-  userId: "user123",
+  //추가
+  kakaoUserId: "example",
+  SelectedUserListString: "",
+  
+
   name: "홍길동",
   birthDate: "1990-01-01",
-  gender: "male",
+  weight: 70,
+  //추가
+  tall: 170,
+
   healthStatus: {
     bloodSugar: 100,
-    bloodPressure: {
-      systolic: 120,
-      diastolic: 80
-    },
-    weight: 70,
-    bmi: 22.5
+    systolic: 120,
+    diastolic: 80,
+    dateTime: "1994-04-04",
+
   }
 }
 ```
+
+### 업데이트 된 데이터 갖고 데이터 형식 다시 생성
+
 
 ### 데이터 형식
 ``` dart
