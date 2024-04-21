@@ -10,6 +10,11 @@
 두번째.
 연동
 
+<img width="667" alt="스크린샷 2024-04-21 오후 3 49 23" src="https://github.com/mimgggg4444/senior-project/assets/66135779/21204eda-baca-46af-9604-b29064dc7c4a">
+
+
+
+
 ```
 ```
 
