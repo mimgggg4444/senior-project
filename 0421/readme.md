@@ -1,4 +1,17 @@
+### logic
 
+준비물 : firebase proj, auth setting (카카오 로그인 활성화), rest api key
+
+필요지식 : firebase auth, oauth 2.0 (토큰인증), 카카오 rest api, firebase sdk or rest api, 보안 및 인증
+
+첫번째. 
+인증
+
+두번째.
+연동
+
+```
+```
 
 ### 키 해시
 
