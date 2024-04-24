@@ -13,7 +13,7 @@
 - Firebase 프로젝트 설정 Kakao Talk 토큰 인증 흐름
 - Kakao Talk 토큰을 이용한 인증 흐름을 단계별로 설명
 
-3. ppt 제목 - 구현단계
+3. 백엔드 로직 구현 및 디자인
 - 백엔드 데이터 형식 구현 Kakao Talk 토큰 인증 구현
 - 백엔드 데이터 형식을 구현하는 방법에 대해 설명 firestore 데이터 모델
 - Kakao Talk 토큰 인증 구현 방법에 대해 설명
