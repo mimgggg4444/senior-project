@@ -9,7 +9,7 @@ class BusinessScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(
-      'Index 1: Business',
+      '이것은 비즈니스',
       style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
     );
   }
