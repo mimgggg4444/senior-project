@@ -1,5 +1,10 @@
 ---
 ---
+firebase login
+flutterfire configure
+
+---
+---
 
 ### 김민기 팀원 담당
 
