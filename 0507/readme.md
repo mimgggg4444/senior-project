@@ -1,0 +1,100 @@
+### 로그인 로직 연결 firestore에 데이터 auth인증된 사용자한해서 데이터 저장할 수 있게
+
+
+- branch login
+- branch merge =>
+
+
+
+1. **main.dart**
+   - MaterialApp에서 초기 라우트를 LoginPage로 설정
+   - ChangeNotifierProvider를 사용하여 UserData Provider를 제공
+
+2. **screens/login_page.dart**
+   - Firebase Authentication을 사용하여 로그인 기능 구현
+   - 로그인 성공 시, 사용자의 uid를 UserData Provider에 저장
+   - 로그인 성공 후에는 HomeScreen 또는 ProfileScreen으로 이동
+
+3. **providers/user_data.dart**
+   - 사용자의 uid를 저장하는 변수를 정의
+   - 사용자 데이터를 저장하고 읽을 수 있는 메서드를 구현
+
+4. **screens/profile_screen.dart**
+   - 사용자 데이터를 표시하고 편집할 수 있는 폼을 구현
+   - 데이터 저장 시, UserData Provider의 uid를 사용하여 해당 사용자의 데이터를 저장
+
+5. **services/firebase_service.dart**
+   - Firestore에서 사용자 데이터를 읽고 쓰는 메서드를 구현
+   - 데이터를 저장할 때는 uid를 문서 ID로 사용하여 각 사용자의 데이터를 구분
+
+6. **models/user_model.dart**
+   - 사용자 데이터를 저장할 UserModel 클래스를 정의
+   - uid 필드를 포함하여 저장할 데이터를 정의
+
+### 구현 순서
+
+1. UserModel 클래스 정의
+2. FirebaseService에서 Firestore 읽기/쓰기 메서드 구현
+3. UserData Provider에서 uid 저장 및 사용자 데이터 읽기/쓰기 메서드 구현
+4. LoginPage에서 Firebase Authentication 로그인 구현 및 uid 저장
+5. ProfileScreen에서 사용자 데이터 폼 구현 및 데이터 읽기/쓰기 기능 구현
+
+---
+---
+
+### 파일트리
+```
+.
+├── components
+│   └── colors.dart
+├── config
+│   └── firebase_options.dart
+├── constants
+│   └── constants.dart
+├── controllers
+│   └── user_controller.dart
+├── main.dart
+├── models
+│   ├── friend_kakao.dart
+│   ├── picker_item.dart
+│   ├── user_model.dart
+│   └── user_model.dart
+├── navigation_state.dart
+├── provider
+│   ├── theme_provider.dart
+│   └── user_data.dart
+├── router
+│   └── app_router.dart
+├── screens
+│   ├── business_screen.dart
+│   ├── home_screen.dart
+│   ├── login_page.dart
+│   ├── main_page.dart
+│   ├── profile_screen.dart
+│   └── splash
+│       └── splash_page.dart
+├── services
+│   └── firestore_service.dart
+├── temple
+│   └── temple.dart
+├── utils
+│   └── font_styles.dart
+└── widgets
+    ├── app_bar.dart
+    ├── bottom_nav.dart
+    ├── bottom_nav_bar.dart
+    ├── bottom_navigation_bar.dart
+    ├── text_field_with_controller.dart
+    └── user_box.dart
+```
+
+
+- `config` 디렉토리에 `firebase_options.dart` 파일이 추가되었습니다.
+- `controllers` 디렉토리에 `user_controller.dart` 파일이 추가되었습니다.
+- `models` 디렉토리에 `user_model.dart` 파일이 추가되었습니다.
+- `provider` 디렉토리에 `user_data.dart` 파일이 추가되었습니다.
+- `router` 디렉토리에 `app_router.dart` 파일이 추가되었습니다.
+- `screens` 디렉토리에 `business_screen.dart`, `home_screen.dart`, `profile_screen.dart` 파일이 추가되었습니다.
+- `services` 디렉토리에 `firestore_service.dart` 파일이 추가되었습니다.
+- `widgets` 디렉토리에 `app_bar.dart`, `bottom_nav.dart`, `bottom_nav_bar.dart`, `bottom_navigation_bar.dart`, `text_field_with_controller.dart`, `user_box.dart` 파일이 추가되었습니다.
+
