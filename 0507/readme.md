@@ -142,7 +142,8 @@
 ---
 ---
 main에서 provider가져왔는데, user_data.dart에서 정리된 데이터 가져오게 하는 방법 파악 요청
-```
+
+``` dart
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
