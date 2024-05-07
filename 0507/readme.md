@@ -131,7 +131,99 @@
 7. **router/app_router.dart**
    - `ProfileScreen` 등의 새로운 화면을 라우터에 추가
 
+  
+
 8. **widgets/text_field_with_controller.dart**
    - 사용자 데이터를 입력할 수 있는 TextFormField 위젯을 구현
+
+
+
+
+---
+---
+main에서 provider가져왔는데, user_data.dart에서 정리된 데이터 가져오게 하는 방법 파악 요청
+```
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/material.dart';
+import 'package:kakao_flutter_sdk/kakao_flutter_sdk.dart';
+import 'package:ocare/config/app_config.dart';
+import 'package:ocare/models/user_model.dart';
+import 'package:ocare/provider/theme_provider.dart';
+import 'package:ocare/screens/home_screen.dart';
+import 'package:ocare/screens/login_page.dart';
+import 'package:provider/provider.dart';
+import 'package:firebase_auth/firebase_auth.dart' as firebase_auth;
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  KakaoSdk.init(nativeAppKey: AppConfig.kakaoNativeKey);
+
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => ThemeProvider()),
+        ChangeNotifierProvider(
+          create: (_) => UserModel(
+            name: '',
+            id: '',
+            age: 0,
+            weight: 0,
+            guardian: '',
+            systolic: 0,
+            diastolic: 0,
+            bloodSugar: 0,
+            nickname: '',
+            email: '',
+          ),
+        ),
+        // 다른 Provider들을 여기에 추가
+      ],
+      child: const MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return ChangeNotifierProvider(
+      create: (context) => UserModel(
+        name: '',
+        id: '',
+        age: 0,
+        weight: 0,
+        guardian: '',
+        systolic: 0,
+        diastolic: 0,
+        bloodSugar: 0,
+        nickname: '',
+        email: '',
+      ),
+      child: MaterialApp(
+        home: StreamBuilder<firebase_auth.User?>(
+          stream: FirebaseAuth.instance.authStateChanges(),
+          builder: (context, snapshot) {
+            if (snapshot.hasData) {
+              // 사용자가 로그인한 상태
+              return const HomeScreen();
+            } else {
+              // 사용자가 로그인하지 않은 상태
+              /// 로그인 후에 mainpage가 바로뜸. 그후 껏다가 키면 homescreen이 뜸.
+              return const LoginPage();
+            }
+          },
+        ),
+      ),
+    );
+  }
+}
+
+
+```
+
 
 
