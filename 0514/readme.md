@@ -8,7 +8,7 @@
    1. ~~저장된 데이터를 토대로 홈 화면에 보여지는 기능~~ -> usermodel
    2. ~~자동 업데이트~~ -> stateful notifyListeners
 5. 개인정보 페이지 디자인
-   1. xd디자인에 나온대로 디자인 -> 피커휠
+   1. xd디자인에 나온대로 디자인 -> 피커휠 (DropdownButtonFormField)
    2. 
 
 
