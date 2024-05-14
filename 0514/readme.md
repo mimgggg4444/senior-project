@@ -11,8 +11,10 @@
    1. 
 
 
+---
+---
 
-### 규칙
+### firebase 데이터 저장 규칙
 ```
 rules_version = '2';
 service cloud.firestore {
