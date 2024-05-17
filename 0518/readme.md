@@ -13,6 +13,25 @@
 - 위험(빨강) 정상 (파랑) 매우 정상(초록)
   1. or 연산자 사용 위 데이터중 위험이 하나라도 해당될 경우 위험 , and 연산자사용 두개다 정상일경우 정상
 
+``` dart
+// 혈압과 혈당에 따른 진행 비율 및 색상 설정
+    bool isBpNormal = user.systolic < 120 && user.diastolic < 80;
+    bool isBpHigh = user.systolic >= 140 || user.diastolic >= 90;
+
+    bool isBsNormal = user.bloodSugar >= 80 && user.bloodSugar <= 120;
+    bool isBsRisky = user.bloodSugar < 80 || user.bloodSugar > 120;
+
+    if (isBpHigh || isBsRisky) {
+      progress = 1.0; // 위험: 혈압 고혈압 또는 혈당 위험일 경우 진행 비율 100%
+      gaugeColor = const Color(0xFFFF0000); // 위험일 경우 빨간색
+    } else if (isBpNormal && isBsNormal) {
+      progress = 0.3; // 매우 정상: 혈압과 혈당 모두 정상일 경우 진행 비율 30%
+      gaugeColor = const Color(0xFF00FF00); // 매우 정상일 경우 초록색
+    } else {
+      progress = 0.6; // 정상: 그 외의 경우 진행 비율 60%
+      gaugeColor = const Color(0xFF276AEE); // 정상일 경우 파란색
+    }
+```
 ---
 ---
 
