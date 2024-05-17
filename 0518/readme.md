@@ -37,7 +37,22 @@
 
 ### 건강 음식 (api?)
 
+
 ``` dart
+
+
+  void initState() {
+    super.initState();
+    _initUserModel();
+    // 종료되고 실행되었을때 랜덤 배열 로직
+    _goodFoods = getRandomGoodFoods(3);
+    _badFoods = getRandomBadFoods(2);
+
+  // user box list init
+  String _goodFoods = '';
+  String _badFoods = '';
+
+
   List<String> goodFoods = [
   List<String> badFoods = [
 
