@@ -19,9 +19,9 @@
 ```
 
 ### 키 해시
-
+- 윈도우
 keytool -exportcert -alias androiddebugkey -keystore %USERPROFILE%\.android\debug.keystore -storepass android -keypass android | openssl sha1 -binary | openssl base64
-
+- mac linux
 keytool -list -v -alias androiddebugkey -keystore ~/.android/debug.keystore | grep SHA1 | sed 's/SHA1://' | xxd -r -p | openssl base64
 
 
